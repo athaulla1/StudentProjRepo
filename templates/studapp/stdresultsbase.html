@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1> Student Information sytem fetched Dynamically from DJango Server </h1>
+  <table border=2>
+    {% if qs %}
+      <tr>
+      <th> Student ID </th>
+      <th> Student Name </th>
+      <th> Student Mark1 </th>
+      <th> Student Mark2 </th>
+      <th> Student Mark3 </th>
+
+    </tr>
+    {% for stud in qs %}
+      <tr>
+        <td> {{stud.sid}} </td>
+        <td> {{stud.sname}} </<td>
+        <td> {{stud.sm1}} </td>
+        <td> {{stud.sm2}} </td>
+        <td> {{stud.sm3}} </td>
+
+      </tr>
+    {%endfor%}
+  </table>
+  {%else%}
+  <h1> No Student records to display which matched entered criteria </h1>
+  {%endif%}
+{% endblock %}
+

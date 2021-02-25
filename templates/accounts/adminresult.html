@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin User Details from Django Server</title>
+
+    <style>
+      th {background-color: #f1f1c1}
+    </style>  
+  </head>
+  <body>
+  <h1> Admin User Details from DJango Server </h1>
+  <table border=2>
+    {% if qs %}
+      <tr>
+      <th> UserName </th>
+      <th> Password </th>
+      <th> Email </th>
+      <th> FirstName </th>
+      <th> LastName </th>
+      #username=uname,password=pwd1,email=email,first_name=fname,last_name=lname   
+    </tr>
+    {% for admin in qs %}
+      <tr>
+        <td> {{admin.username}} </td>
+        <td> {{admin.password}} </<td>
+        <td> {{admin.email}} </td>
+        <td> {{admin.first_name}} </td>
+        <td> {{admin.last_name}} </td>
+
+      </tr>
+    {%endfor%}
+  </table>
+  {%else%}
+  <h1> No Student records to display which matched entered criteria </h1>
+  {%endif%}
+  </body>
+</html>

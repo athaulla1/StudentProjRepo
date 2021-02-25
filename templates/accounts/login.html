@@ -1,0 +1,58 @@
+
+<html> <!-- every HTML page must start with <html> tag  and end with </html> tag -->
+<head> <!-- HTML is used for META DATA process- search engine and end with </html> tag -->
+<title> Login Form </title>  <!-- to give title for this page which will be shown on Browser -->
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.b1{
+  background-color: cyan
+}
+.a1
+{
+  display: block;
+  color: red;
+  text-align: center;
+  padding: 30px;
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body style="background-color: #f1f1c1">
+    <!--<script src="formvalid.js"> </script> -->
+    <h1> Django Login Page</h1>
+    
+    <form action="login" method="POST">
+    
+      {% csrf_token %}
+    
+    <label for="username">User Name   :  </label>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="pwd">Password  </label>
+    <input type="text" id="pwd" class="m" name="pwd"><br><br>
+    <input type="submit" ></input>
+    </form>
+    {% for message in messages %}
+        <h3> message.</h3>
+    {% endfor %}
+
+
+  </body>
+    </html>
+
